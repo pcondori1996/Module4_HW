@@ -1,0 +1,100 @@
+* {
+    background-color: #154d7a;
+    color: white;
+    font-family: cursive;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    background-color: black;
+    height: 30vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.headerElements {
+    background-color: black
+}
+
+
+
+.container {
+    height: auto;
+    border: 10px solid white;
+    margin-top: 20px;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+  
+
+}
+
+div {
+    margin: 10px;
+}
+
+p {
+    padding: 5px;
+    text-align: center;
+}
+
+.buttonHolder {
+    display: flex;
+    justify-content: center;
+}
+
+#startButton {
+    width: 20%;
+    height: 15%;
+    border-radius: 10px;
+    border: 5px solid white;
+    padding: 5px;
+}
+
+#startButton:hover {
+    cursor: pointer;
+    background-color: rgb(97, 106, 114);
+}
+
+#restartButton{
+    width: 20%;
+    height: 15%;
+    border-radius: 10px;
+    border: 5px solid white;
+    padding: 5px;
+}
+
+
+#restartButton:hover {
+    cursor: pointer;
+    background-color: rgb(97, 106, 114);
+}
+
+.queAndOpts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons {
+    width: 50%;
+    margin: 5px;
+    border-radius: 10px;
+    background-color: rgb(47, 101, 146);
+}
+
+.buttons:hover {
+    cursor: pointer;
+    background-color: cornflowerblue;
+}
