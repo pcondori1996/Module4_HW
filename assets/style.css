@@ -87,6 +87,14 @@ p {
     align-items: center;
 }
 
+.questionHolder{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
 .buttons {
     width: 50%;
     margin: 5px;
@@ -97,4 +105,22 @@ p {
 .buttons:hover {
     cursor: pointer;
     background-color: cornflowerblue;
+}
+
+.postQuiz {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nameForm {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.hideElement {
+    display:none;
 }

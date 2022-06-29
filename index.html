@@ -1,49 +1,69 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Small Quiz</title>
-    <link rel="stylesheet" href="./assets/style.css"
-</head>
+    <link rel="stylesheet" href="./assets/style.css" </head>
+
 <body>
     <header>
-        <h1 class= "headerElements">Language Quiz</h1>
-        <h2 class= "headerElements">Seconds Left : <span id="secsLeft">30</span></h2>
-        <h2 class= "headerElements">Score: <span id="correctScore">0</span></h2>
+        <h1 class="headerElements">Language Quiz</h1>
+        <h2 class="headerElements">Seconds Left : <span id="secsLeft">30</span></h2>
+        <h2 class="headerElements">Score: <span id="correctScore">0</span></h2>
     </header>
 
-    <main class= "container">
-        <div>
-            <p>To begin the game you must press the "Start" button. 
-                Once you have started the game you must answer as many questions as you can Before the timer runs out! 
-                The question will show a phrase in a language and you must pick the choose with the correct 
-                language on it. Every time you answer incorrectly the background changes to red and you lose 5 seconds
-            </p>  
-        </div>
-        
-        <div class="buttonHolder">
-        <button id="startButton">Start</button>
-        </div>
+    <main class="container">
 
-        <div class="buttonHolder">
-            <button id="restartButton">Retart</button>
+        <div class="instructions">
+
+            <div>
+                <p>To begin the game you must press the "Start" button.
+                    Once you have started the game you must answer as many questions as you can Before the timer runs
+                    out!
+                    The question will show a phrase in a language and you must pick the choose with the correct
+                    language on it. Every time you answer incorrectly the background changes to red and you lose 5
+                    seconds
+                </p>
             </div>
 
-        <div class="queAndOpts">
-                <h4>Question: <span id="question">Ex: Hola! Como estas hermosa?</span></h4>
-                <button class="buttons option1">Spanish</button>
-                <button class="buttons option2">Italain</button>
-                <button class="buttons option3">Portuguese</button>
-                <button class="buttons option4">Arabic</button>
-                
-       
-            </ul>
+            <div class="buttonHolder">
+                <button id="startButton">Start</button>
+            </div>
+
+            <div class="buttonHolder hideElement">
+                <button id="restartButton">Retart</button>
+            </div>
+
+        </div>
+
+        <div class="questionHolder hideElement">
+            <h4>Question: <span id="question">Ex: Hola! Como estas hermosa?</span></h4>
+        </div>
+
+        <div class="queAndOpts hideElement">
+            <button class="buttons option1">Spanish</button>
+            <button class="buttons option2">Italain</button>
+            <button class="buttons option3">Portuguese</button>
+            <button class="buttons option4">Arabic</button>
+        </div>
+
+        <div class="postQuiz hideElement">
+            <form class="nameForm">
+                <label>Type your name to save your score on our website:</label>
+                <input type="text" placeholder="name" id="userName">
+            </form>
+            
+        </div>
+
+
+
         </div>
     </main>
-    
+
     <script src="./assets/script.js"></script>
 </body>
+
 </html>
