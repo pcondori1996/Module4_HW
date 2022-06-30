@@ -11,7 +11,8 @@
 <body>
     <header>
         <h1 class="headerElements">Language Quiz</h1>
-        <h2 class="headerElements">Seconds Left : <span id="secsLeft">30</span></h2>
+        <h1 class="headerPostElements hideElement">Quiz Results</h1>
+        <h2 class="headerElements">Seconds Left: <span id="secsLeft">30</span></h2>
         <h2 class="headerElements">Score: <span id="correctScore">0</span></h2>
     </header>
 
@@ -52,10 +53,13 @@
 
         <div class="postQuiz hideElement">
             <form class="nameForm">
-                <label>Type your name to save your score on our website:</label>
-                <input type="text" placeholder="name" id="userName">
+                <label for="textPlace">Type your name to save your score on our website:</label>
+                <textarea id="textPlace" placeholder="Your Name...."></textarea>
+                <button id="insertName"> Enter </button>
             </form>
-            
+
+            <ol class="OLofData"></ol>    
+        
         </div>
 
 

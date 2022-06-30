@@ -13,7 +13,6 @@ body {
 
 header {
     background-color: black;
-    height: 30vh;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -24,6 +23,10 @@ header {
 
 .headerElements {
     background-color: black
+}
+
+.headerPostElements {
+    background-color: black;
 }
 
 
@@ -115,10 +118,20 @@ p {
 }
 
 .nameForm {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
 
+}
+
+li {
+    display: block;
+}
+
+.OlofData {
+    flex-direction: column;
 }
 
 .hideElement {
