@@ -81,7 +81,7 @@ startButton.addEventListener("click", function () {
             //secsRemaining.classList.add('hideElement');
             //correctScore.classList.add('hideElement');
         }
-    }, 1000);
+    },1000);
 
 });
 
