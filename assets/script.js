@@ -24,9 +24,9 @@ var option2 = document.querySelector('.option2');
 var option3 = document.querySelector('.option3');
 var option4 = document.querySelector('.option4');
 
-//gobla carables
+//gobal characters
 var index = 0;
-var secCount = 1;
+var secCount =30;
 var scoreCount = 0;
 
 //Applying CSS to properties
@@ -40,13 +40,14 @@ secsRemaining.setAttribute('style', 'background-color: black');
 
 //Obeject that holds array of the question and answer options for every button
 var quesAndAnswerLists = {
-    questions: ['Eu sinto sua falta!', 'Todavia no se como escribir JavaScript!',
-        'Ik mis je', 'Comment vas-tu?', 'I still dont understand JavaScript!'],
-    button1Ops: ['Portuguese', 'English', 'Italian', 'French', 'English'],
-    button2Ops: ['English', 'French', 'Dutch', 'German', 'French'],
-    button3Ops: ['Spanish', 'Spanish', 'Spanish', 'Italian', 'Portuguese'],
-    button4Ops: ['French', 'Italian', 'English', 'Dutch', 'Spanish'],
-    answers: ['Portuguese', 'Spanish', 'Dutch', 'French', 'English']
+    questions: ['Inside which HTML element do we put the JavaScript?', 'What is the correct JavaScript syntax to write "Hello World"?',
+        'Where is the correct place to insert a JavaScript?', 'What is the correct syntax for referring to an external script called "xxx.js"?',
+         'How do you write "Hello World" in an alert box?', 'How do you create a function?'],
+    button1Ops: ['<javascript>', 'response.write("Hello World")', 'Both the <head> section and the <body> section are correct', '<script src="xxx.js">', 'alert("Hello World")','function:myFunction()'],
+    button2Ops: ['<js>', '"Hello World"', 'The <body> section', '<script name="xxx.js">', 'msgBox("Hello World")','function=myFunction()'],
+    button3Ops: ['<script>', 'document.write("Hello World")', 'The <head> section', '<script href="xxx.js">', 'alertBox="Hello World"','function myFunction()'],
+    button4Ops: ['<scripting>', '("Hello World")', '<p>', '<script value="xxx.js">', 'alertBox("Hello World")', 'myFunction():function'],
+    answers: ['<script>', 'document.write("Hello World")', 'Both the <head> section and the <body> section are correct', '<script src="xxx.js">', 'alertBox("Hello World")', 'function myFunction()']
 }
 
 // Vars made after objects were made.
@@ -142,7 +143,7 @@ enterButton.addEventListener("click", function (event) {
     var getData1 = GetData(StoredDate);
     getData1.sort(compareData);
 
-    if(getData1.length > 10) { 
+    if(getData1.length > 5) { 
         getData1.pop();
     }
     ConnectData(getData1);
@@ -165,13 +166,13 @@ var GetData = function (StoredDate) {
 
 function compareData(a, b) {
     //simple logic to sort the values in the highscores array by their score
-    const scoreA = a.FinalScores;
-    const scoreB = b.FinalScores;
+    var scoreA = a.FinalScores;
+    var scoreB = b.FinalScores;
 
     var comparison = 0;
     if (scoreA < scoreB) {
         comparison = 1;
-    } else if (scoreA > scoreB) {
+    } else if (scoreA> scoreB) {
         comparison = -1
     }
     return comparison;
@@ -181,9 +182,24 @@ var OLofData = document.querySelector(".OLofData");
 
 var ConnectData = function(getData1) {
     for(i=0 ; i < getData1.length; i++) {
-        var listItem = document.createElement('il')
+        var listItem = document.createElement('li')
         listItem.textContent = getData1[i].Usernames + " Score: " + getData1[i].FinalScores;
         OLofData.appendChild(listItem);
     }
 }
+
+//RESTART & CLEAR BUTTON
+var restartButton = document.querySelector('#restartButton');
+var clearButton = document.querySelector('#clearButton');
+
+
+restartButton.addEventListener("click", function() {
+    location.reload();
+})
+
+clearButton.addEventListener("click", function() {
+    localStorage.clear();
+})
+
+
 

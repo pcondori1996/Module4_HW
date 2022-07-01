@@ -2,6 +2,7 @@
     background-color: #154d7a;
     color: white;
     font-family: cursive;
+    font-size: larger;
 }
 
 body {
@@ -70,15 +71,26 @@ p {
 }
 
 #restartButton{
-    width: 20%;
-    height: 15%;
     border-radius: 10px;
     border: 5px solid white;
     padding: 5px;
+    margin-bottom: 10px;
 }
 
 
 #restartButton:hover {
+    cursor: pointer;
+    background-color: rgb(97, 106, 114);
+}
+
+#clearButton{
+    border-radius: 10px;
+    border: 5px solid white;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+#clearButton:hover {
     cursor: pointer;
     background-color: rgb(97, 106, 114);
 }
@@ -126,12 +138,15 @@ p {
 
 }
 
-li {
-    display: block;
+.OlofData {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
-.OlofData {
-    flex-direction: column;
+li {
+    text-align: left;
+    font-size:x-large;
 }
 
 .hideElement {

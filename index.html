@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Small Quiz</title>
+    <title>JavaScript Quiz that probably doesn't work!</title>
     <link rel="stylesheet" href="./assets/style.css" </head>
 
 <body>
     <header>
-        <h1 class="headerElements">Language Quiz</h1>
+        <h1 class="headerElements">JavaScript Quiz</h1>
         <h1 class="headerPostElements hideElement">Quiz Results</h1>
         <h2 class="headerElements">Seconds Left: <span id="secsLeft">30</span></h2>
         <h2 class="headerElements">Score: <span id="correctScore">0</span></h2>
@@ -34,10 +34,6 @@
                 <button id="startButton">Start</button>
             </div>
 
-            <div class="buttonHolder hideElement">
-                <button id="restartButton">Retart</button>
-            </div>
-
         </div>
 
         <div class="questionHolder hideElement">
@@ -52,11 +48,21 @@
         </div>
 
         <div class="postQuiz hideElement">
+
+            <div class="buttonHolder">
+                <button id="clearButton">Clear Scores</button>
+            </div>
+
+            <div class="buttonHolder">
+                <button type="reset" id="restartButton">Restart Quiz</button>
+            </div>
+
             <form class="nameForm">
                 <label for="textPlace">Type your name to save your score on our website:</label>
                 <textarea id="textPlace" placeholder="Your Name...."></textarea>
-                <button id="insertName"> Enter </button>
+                <button id="insertName">Enter</button>
             </form>
+           
 
             <ol class="OLofData"></ol>    
         
