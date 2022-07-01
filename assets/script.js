@@ -26,7 +26,7 @@ var option4 = document.querySelector('.option4');
 
 //gobal characters
 var index = 0;
-var secCount =30;
+var secCount = 5;
 var scoreCount = 0;
 
 //Applying CSS to properties
@@ -42,10 +42,10 @@ secsRemaining.setAttribute('style', 'background-color: black');
 var quesAndAnswerLists = {
     questions: ['Inside which HTML element do we put the JavaScript?', 'What is the correct JavaScript syntax to write "Hello World"?',
         'Where is the correct place to insert a JavaScript?', 'What is the correct syntax for referring to an external script called "xxx.js"?',
-         'How do you write "Hello World" in an alert box?', 'How do you create a function?'],
-    button1Ops: ['<javascript>', 'response.write("Hello World")', 'Both the <head> section and the <body> section are correct', '<script src="xxx.js">', 'alert("Hello World")','function:myFunction()'],
-    button2Ops: ['<js>', '"Hello World"', 'The <body> section', '<script name="xxx.js">', 'msgBox("Hello World")','function=myFunction()'],
-    button3Ops: ['<script>', 'document.write("Hello World")', 'The <head> section', '<script href="xxx.js">', 'alertBox="Hello World"','function myFunction()'],
+        'How do you write "Hello World" in an alert box?', 'How do you create a function?'],
+    button1Ops: ['<javascript>', 'response.write("Hello World")', 'Both the <head> section and the <body> section are correct', '<script src="xxx.js">', 'alert("Hello World")', 'function:myFunction()'],
+    button2Ops: ['<js>', '"Hello World"', 'The <body> section', '<script name="xxx.js">', 'msgBox("Hello World")', 'function=myFunction()'],
+    button3Ops: ['<script>', 'document.write("Hello World")', 'The <head> section', '<script href="xxx.js">', 'alertBox="Hello World"', 'function myFunction()'],
     button4Ops: ['<scripting>', '("Hello World")', '<p>', '<script value="xxx.js">', 'alertBox("Hello World")', 'myFunction():function'],
     answers: ['<script>', 'document.write("Hello World")', 'Both the <head> section and the <body> section are correct', '<script src="xxx.js">', 'alertBox("Hello World")', 'function myFunction()']
 }
@@ -81,7 +81,7 @@ startButton.addEventListener("click", function () {
             //secsRemaining.classList.add('hideElement');
             //correctScore.classList.add('hideElement');
         }
-    },1000);
+    }, 1000);
 
 });
 
@@ -143,13 +143,13 @@ enterButton.addEventListener("click", function (event) {
     var getData1 = GetData(StoredDate);
     getData1.sort(compareData);
 
-    if(getData1.length > 5) { 
+    if (getData1.length > 5) {
         getData1.pop();
     }
     ConnectData(getData1);
     //setter
     localStorage.setItem('StoredPastName', JSON.stringify(getData1));
-
+    typeName.value = ""
 
 });
 
@@ -159,7 +159,15 @@ var GetData = function (StoredDate) {
     if (StoredNames === null) {
         StoredNames = [StoredDate];
     } else {
-        StoredNames.push(StoredDate);
+        console.log(StoredDate)
+        var found = StoredNames.some(function (storedName) {
+            return storedName.Usernames.trim().toLowerCase() === typeName.value.trim().toLowerCase()       
+        }) 
+        
+            console.log(found)
+        if (found === false && typeName.value.length > 0) {
+            StoredNames.push(StoredDate);
+        }
     }
     return StoredNames
 }
@@ -172,7 +180,7 @@ function compareData(a, b) {
     var comparison = 0;
     if (scoreA < scoreB) {
         comparison = 1;
-    } else if (scoreA> scoreB) {
+    } else if (scoreA > scoreB) {
         comparison = -1
     }
     return comparison;
@@ -180,8 +188,9 @@ function compareData(a, b) {
 
 var OLofData = document.querySelector(".OLofData");
 
-var ConnectData = function(getData1) {
-    for(i=0 ; i < getData1.length; i++) {
+var ConnectData = function (getData1) {
+    OLofData.textContent = "";
+    for (i = 0; i < getData1.length; i++) {
         var listItem = document.createElement('li')
         listItem.textContent = getData1[i].Usernames + " Score: " + getData1[i].FinalScores;
         OLofData.appendChild(listItem);
@@ -193,11 +202,11 @@ var restartButton = document.querySelector('#restartButton');
 var clearButton = document.querySelector('#clearButton');
 
 
-restartButton.addEventListener("click", function() {
+restartButton.addEventListener("click", function () {
     location.reload();
 })
 
-clearButton.addEventListener("click", function() {
+clearButton.addEventListener("click", function () {
     localStorage.clear();
 })
 
